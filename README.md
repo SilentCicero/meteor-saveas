@@ -10,5 +10,7 @@ A simple package for providing a browser-based saveAs function for Meteor apps.
 Note, the `saveAs` method is made a global window variable.
 
 ```
-saveAs("<h3>My html file</h3>", "someHTMLfile.html");
+var aFileParts = ["<h3>My html file</h3>"];
+var oMyBlob = new Blob(aFileParts, {type : 'text/html'}); 
+saveAs(oMyBlob, "someHTMLfile.html");
 ```
